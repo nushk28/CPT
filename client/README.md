@@ -1,4 +1,6 @@
 # BlogOptimize WebApp
+This web application is a blogging platform created for the purpose of engaging users to bring out their creative side and write exquisite blogs.
+It is a part of Cloud Performance Tuning subject where Azure technologies will be applied on it at deployment for enhancing the performance of this app.
 
 # Getting Started with Create React App
 
