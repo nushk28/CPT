@@ -15,11 +15,20 @@ app.use(bodyParser.json({extended: true}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', Router);
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
+const path = require('path');
+
+app.use(express.static("./client/build"));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});    
+
 
 app.listen(PORT, () => console.log(`Server is running Successfully on PORT ${PORT}`));
 
 const USERNAME = process.env.DB_USERNAME;
 const PASSWORD = process.env.DB_PASSWORD;
 
-Connection(USERNAME, PASSWORD);
+const URL= process.env.MONGODB_URI || `mongodb+srv://${USERNAME}:${PASSWORD}@blog-app.vuypco8.mongodb.net/?retryWrites=true&w=majority`;
+
+Connection(URL);
