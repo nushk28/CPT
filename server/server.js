@@ -9,6 +9,7 @@ import bodyParser from 'body-parser';
 dotenv.config();
 
 const app = express();
+const path = require('path');
 
 app.use(cors());
 app.use(bodyParser.json({extended: true}));
