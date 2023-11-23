@@ -2,7 +2,7 @@ import grid from 'gridfs-stream';
 import mongoose from 'mongoose';
 
 
-const url = ''
+const url = 'http://blogoptimize.azurewebsites.net'
 
 let gfs, gridfsBucket;
 const conn = mongoose.connection;
